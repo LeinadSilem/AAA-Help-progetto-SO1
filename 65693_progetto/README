@@ -1,0 +1,22 @@
+README
+
+Queste sono le caratteristiche delle due versioni di space defenders, qui saranno annotati i controlli, features aggiuntive e bug conosciuti
+
+Versione a thread:
+
+Controlli: 
+	La navicella si muove con le freccie direzionali su e giu, e spara con il tasto S.
+
+Features:
+	- Gli alieni di livello 2 posseggono 4 vite anzichè 2, questo poichè ogni volta che uno sciame viene colpito un membro dello sciame verrà cancellato a schermo, dato che la funzione di stampa visualizza tante nevicelle quante sono le vite dello sciame;
+
+	- Gli alieni appariranno ad ondate regolabili in numero dopo un determinato intervallo temporale e gli sciami di alieni di livello 2 si muoveranno più velocemente rispetto a quelli di livello 1;
+
+	- I proietili sparati dalla navicella rimbalzano sui bordi anzichè muoversi diagonalmente fino a sparire, inoltre non si possono sparare più di 5 colpi (regolabili) stando fermi nella stessa posizione, per ricaricare i colpi basterà fare tanti passi quanti colpi si vogliono ricaricare, fino ad un massimo di 5;
+
+Bug noti:
+	- Dopo aver ultimato la fase di rilascio della memoria e chiusura dei thread il gioco stampa la schermata finale ma anzichè ritornare alle funzionalità normali del terminale va sfortunatamente in segmentation fault. L'origine di questo segmentation fault è ancora sconosciuta, il debugger (gdb) non riesce a trovare una fonte, e dato il tempo ristretto ho dovuto consegnare consapevole di questo errore, anche se non compromette l'esecuzione del gioco;
+
+	- A volte gli alieni, indipendentemente dal loro livello, quando vengono colpiti e/o collidono con un altro alieno vengono proiettati verticalmente verso l'alto molto rapidamente. Ciò non compromette successivi rimbalzi dell'alieno ne la sua traiettoria, è solamente un pò strano;
+
+	- Ci sono alcuni bug di stampa, dovuti al fatto che solo l'area di gioco viene ripulita, quindi ad esempio uccidendo immediatamente un alieno di livello 1 che si trova al bordo destro della mappa, pezzi dell'alieno di livello 2 che occupa molto più spazio rimarranno visibili oltre l'area di gioco;
